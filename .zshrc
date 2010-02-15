@@ -86,3 +86,6 @@ export MAVEN_OPTS="-noverify -javaagent:/Applications/liftweb-1.0/java-rebel/jav
 export PATH=$M2:$PATH
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 export MANPATH=/opt/local/share/man:$MANPATH
+
+# Get emacsclient working using the right version.
+export PATH=/Applications/MacPorts/Emacs.app/Contents/MacOS/bin:$PATH
