@@ -76,3 +76,13 @@ emacspipe() {
 }
 
 alias sstat='svnstatus'
+
+export ALTERNATE_EDITOR=emacs
+export EDITOR=emacsclient
+export VISUAL=emacsclient
+export M2_HOME=/Applications/liftweb-1.0/apache-maven
+export M2=$M2_HOME/bin
+export MAVEN_OPTS="-noverify -javaagent:/Applications/liftweb-1.0/java-rebel/javarebel.jar"
+export PATH=$M2:$PATH
+export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+export MANPATH=/opt/local/share/man:$MANPATH
