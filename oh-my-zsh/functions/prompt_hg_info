@@ -1,5 +1,5 @@
 if [ -n "$__CURRENT_HG_BRANCH" ]; then
-	local s="("
+	local s="%{$fg[blue]%}("
 	s+="$__CURRENT_HG_BRANCH"
 	case "$__CURRENT_HG_BRANCH_STATUS" in
 		ahead)
@@ -13,9 +13,8 @@ if [ -n "$__CURRENT_HG_BRANCH" ]; then
 		;;
 	esac
 	if [ -n "$__CURRENT_HG_BRANCH_IS_DIRTY" ]; then
-		s+="⚡"
+		s+="%{$fg[blue]%})%{$fg[red]%}⚡%{$reset_color%} "
 	fi
-	s+=")"
-	
-	printf " %s%s" "%{${fg[yellow]}%}" $s
+
+	printf "%s" $s
 fi
