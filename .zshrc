@@ -91,3 +91,17 @@ typeset -ga chpwd_functions
 preexec_functions+='preexec_update_hg_vars'
 precmd_functions+='precmd_update_hg_vars'
 chpwd_functions+='chpwd_update_hg_vars'
+
+export ALTERNATE_EDITOR=emacs
+export EDITOR=emacsclient
+export VISUAL=emacsclient
+export M2_HOME=/Applications/liftweb-1.0/apache-maven
+export M2=$M2_HOME/bin
+export MAVEN_OPTS="-noverify -javaagent:/Applications/liftweb-1.0/java-rebel/javarebel.jar"
+export PATH=$M2:$PATH
+export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+export MANPATH=/opt/local/share/man:$MANPATH
+
+# Get emacsclient working using the right version.
+export PATH=/Applications/MacPorts/Emacs.app/Contents/MacOS/bin:$PATH
+
