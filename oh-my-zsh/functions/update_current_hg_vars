@@ -1,0 +1,16 @@
+unset __CURRENT_HG_BRANCH
+unset __CURRENT_HG_BRANCH_STATUS
+unset __CURRENT_HG_BRANCH_IS_DIRTY
+local st="$(hg status 2>/dev/null)"
+local br="$(hg branch 2>/dev/null)"
+if [ -n "$br" ]; then
+	local -a arr
+	arr=(${(f)br})
+	export __CURRENT_HG_BRANCH="$(echo $arr[1])"
+fi
+if [ -n "$st" ]; then
+	if echo $st | grep "nothing to commit (working directory clean)" >/dev/null; then
+	else
+		export __CURRENT_HG_BRANCH_IS_DIRTY='1'
+	fi
+fi

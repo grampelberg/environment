@@ -19,6 +19,9 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 
+export ALTERNATE_EDITOR=emacs
+export EDITOR=emacsclient
+export VISUAL=emacsclient
 
 # SVN helper functions
 svnstatus () {
