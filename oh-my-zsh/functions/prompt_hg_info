@@ -12,8 +12,9 @@ if [ -n "$__CURRENT_HG_BRANCH" ]; then
 		s+="↓"
 		;;
 	esac
+        s+="%{$fg[blue]%})"
 	if [ -n "$__CURRENT_HG_BRANCH_IS_DIRTY" ]; then
-		s+="%{$fg[blue]%})%{$fg[red]%}⚡%{$reset_color%} "
+		s+="%{$fg[red]%}⚡%{$reset_color%} "
 	fi
 
 	printf "%s" $s
