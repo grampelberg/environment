@@ -5,7 +5,7 @@ then
 fi
 
 echo "Cloning Oh My Zsh..."
-/usr/bin/env git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+/usr/bin/env git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 
 echo "Looking for an existing zsh config..."
 if [ -f ~/.zshrc ] || [ -h ~/.zshrc ]
@@ -22,8 +22,15 @@ echo "Copying your current PATH and adding it to the end of ~/.zshrc for you."
 echo "export PATH=$PATH" >> ~/.zshrc
 
 echo "Time to change your default shell to zsh!"
-chsh -s /bin/zsh
+chsh -s `which zsh`
 
-echo "Hooray! Oh My Zsh has been installed."
-/bin/zsh
+echo '         __                                     __  '
+echo '  ____  / /_     ____ ___  __  __   ____  _____/ /_ '
+echo ' / __ \/ __ \   / __ `__ \/ / / /  /_  / / ___/ __ \ '
+echo '/ /_/ / / / /  / / / / / / /_/ /    / /_(__  ) / / / '
+echo '\____/_/ /_/  /_/ /_/ /_/\__, /    /___/____/_/ /_/  '
+echo '                        /____/'
+
+echo "\n\n ....is now installed."
+/usr/bin/env zsh
 source ~/.zshrc
