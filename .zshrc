@@ -92,6 +92,8 @@ preexec_functions+='preexec_update_hg_vars'
 precmd_functions+='precmd_update_hg_vars'
 chpwd_functions+='chpwd_update_hg_vars'
 
+plugins=(git osx ruby brew gem github pip)
+
 export ALTERNATE_EDITOR=emacs
 export EDITOR=emacsclient
 export VISUAL=emacsclient
