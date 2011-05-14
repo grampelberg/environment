@@ -84,8 +84,21 @@ export M2_HOME=/Applications/liftweb-1.0/apache-maven
 export M2=$M2_HOME/bin
 export MAVEN_OPTS="-noverify -javaagent:/Applications/liftweb-1.0/java-rebel/javarebel.jar"
 export PATH=$M2:$PATH
-export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+export PATH=/usr/local/bin:/opt/local/bin:/opt/local/sbin:$PATH
 export MANPATH=/opt/local/share/man:$MANPATH
 
 # Get emacsclient working using the right version.
 export PATH=/Applications/MacPorts/Emacs.app/Contents/MacOS/bin:$PATH
+
+# Sproutcore's abbot stuff.
+export PATH=~/code/abbot/bin:$PATH
+
+# seed.js
+export PATH=~/.seeds/bin:$PATH
+
+# homebrew python
+export PATH=/usr/local/Cellar/python/2.7.1/bin:/usr/local/sbin:$PATH
+export GEM_HOME=/usr/local/Cellar/gems/1.9
+
+#npm
+export PATH=/usr/local/share/npm/bin:$PATH
