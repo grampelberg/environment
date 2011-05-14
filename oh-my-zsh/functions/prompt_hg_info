@@ -1,0 +1,23 @@
+if [ -n "$__CURRENT_HG_BRANCH" ]; then
+	local s="%{$fg[blue]%}("
+	s+="$__CURRENT_HG_BRANCH"
+	case "$__CURRENT_HG_BRANCH_STATUS" in
+		ahead)
+		s+="↑"
+		;;
+		diverged)
+		s+="↕"
+		;;
+		behind)
+		s+="↓"
+		;;
+	esac
+        s+="%{$fg[blue]%})"
+	if [ -n "$__CURRENT_HG_BRANCH_IS_DIRTY" ]; then
+		s+="%{$fg[red]%}⚡%{$reset_color%} "
+        else
+                s+=" "
+	fi
+
+	printf "%s" $s
+fi

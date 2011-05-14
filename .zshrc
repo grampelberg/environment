@@ -19,6 +19,9 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 
+export ALTERNATE_EDITOR=emacs
+export EDITOR=emacsclient
+export VISUAL=emacsclient
 
 # SVN helper functions
 svnstatus () {
@@ -76,6 +79,18 @@ emacspipe() {
 }
 
 alias sstat='svnstatus'
+
+autoload -U $ZSH/functions/*(:t)
+
+# Enable auto-execution of functions.
+typeset -ga preexec_functions
+typeset -ga precmd_functions
+typeset -ga chpwd_functions
+
+# Append hg functions needed for prompt.
+preexec_functions+='preexec_update_hg_vars'
+precmd_functions+='precmd_update_hg_vars'
+chpwd_functions+='chpwd_update_hg_vars'
 
 export ALTERNATE_EDITOR=emacs
 export EDITOR=emacsclient
