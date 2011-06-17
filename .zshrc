@@ -79,6 +79,14 @@ emacspipe() {
 }
 
 alias sstat='svnstatus'
+export ENVJS=~/code/env-js
+alias js="java -cp $ENVJS/rhino/js.jar:$ENVJS/rhino/jline.jar \
+    -Xbootclasspath/p:$ENVJS/rhino/js.jar:$ENVJS/rhino/jline.jar \
+    jline.ConsoleRunner org.mozilla.javascript.tools.shell.Main -opt -1 "
+
+# GIT aliases
+alias gcm='git commit -a -m'
+
 
 autoload -U $ZSH/functions/*(:t)
 
@@ -105,3 +113,8 @@ export MANPATH=/opt/local/share/man:$MANPATH
 # Get emacsclient working using the right version.
 export PATH=/Applications/MacPorts/Emacs.app/Contents/MacOS/bin:$PATH
 
+# Make gems usable on the path
+export PATH=~/.gem/ruby/1.8/bin:/var/lib/gems/1.8/bin:$PATH
+
+# Put the chef helpers on the path
+export PATH=~/code/chef-repo/bin:$PATH
