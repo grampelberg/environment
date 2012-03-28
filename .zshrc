@@ -15,6 +15,7 @@ export ZSH_THEME="wezm"
 # Uncomment following line if you want to disable colors in ls
 # export DISABLE_LS_COLORS="true"
 
+plugins=(git gem pip npm perl ssh-agent svn)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
@@ -25,6 +26,7 @@ export VISUAL=emacsclient
 
 # GIT aliases
 alias gcm='git commit -a -m'
+alias gs="ggpnp"
 
 # Enable auto-execution of functions.
 typeset -ga preexec_functions
