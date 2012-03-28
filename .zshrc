@@ -41,5 +41,6 @@ plugins=(git osx ruby brew gem github pip)
 # homebrew python
 export PATH=/usr/local/share/python:/usr/local/bin:$PATH
 export GEM_HOME=/usr/local
+export PATH=/usr/local/Cellar/ruby/1.9.3-p125/bin:$PATH
 
 alias emacs='/usr/local/Cellar/emacs/HEAD/Emacs.app/Contents/MacOS/Emacs -nw'
