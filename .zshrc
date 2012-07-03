@@ -24,7 +24,16 @@ export EDITOR=emacsclient
 export VISUAL=emacsclient
 
 # GIT aliases
+function current_branch() {
+  ref=$(git symbolic-ref HEAD 2> /dev/null) || return
+  echo ${ref#refs/heads/}
+}
+
 alias gcm='git commit -a -m'
+alias gdown='git pull --rebase origin $(current_branch)'
+compdef gdown=git
+alias gup='git push origin $(current_branch)'
+compdef gup=git
 
 # Enable auto-execution of functions.
 typeset -ga preexec_functions
@@ -39,7 +48,16 @@ chpwd_functions+='chpwd_update_hg_vars'
 plugins=(git osx ruby brew gem github pip)
 
 # homebrew python
-export PATH=/usr/local/share/python:/usr/local/bin:$PATH
-export GEM_HOME=/usr/local
+export PATH=/usr/local/share/python:/usr/local/sbin:/usr/local/bin:$PATH
+#export GEM_HOME=/usr/local
+
+# rbenv
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
 
 alias emacs='/usr/local/Cellar/emacs/HEAD/Emacs.app/Contents/MacOS/Emacs -nw'
+
+# rails aliases
+alias brake='SINGLE_THREADED=true bundle exec rake'
+alias bserve='bundle exec rails s thin'
+alias best='bundle exec rspec '
