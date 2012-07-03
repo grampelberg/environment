@@ -15,6 +15,7 @@ export ZSH_THEME="wezm"
 # Uncomment following line if you want to disable colors in ls
 # export DISABLE_LS_COLORS="true"
 
+plugins=(git gem pip npm perl ssh-agent svn)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
@@ -30,10 +31,13 @@ function current_branch() {
 }
 
 alias gcm='git commit -a -m'
+<<<<<<< HEAD
 alias gdown='git pull --rebase origin $(current_branch)'
 compdef gdown=git
 alias gup='git push origin $(current_branch)'
 compdef gup=git
+=======
+alias gs="ggpnp"
 
 # Enable auto-execution of functions.
 typeset -ga preexec_functions
@@ -55,6 +59,9 @@ export PATH=/usr/local/share/python:/usr/local/sbin:/usr/local/bin:$PATH
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
+export PATH=/usr/local/share/python:/usr/local/bin:$PATH
+export GEM_HOME=/usr/local
+export PATH=/usr/local/Cellar/ruby/1.9.3-p125/bin:$PATH
 alias emacs='/usr/local/Cellar/emacs/HEAD/Emacs.app/Contents/MacOS/Emacs -nw'
 
 # rails aliases
